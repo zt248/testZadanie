@@ -5,14 +5,22 @@
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
 
+  <listener>
+    <listener-class>
+      controller.ExampleContextListener
+    </listener-class>
+  </listener>
+
 
   <servlet>
     <servlet-name>mainServlet</servlet-name>
-    <servlet-class>MainServlet</servlet-class>
+    <servlet-class>controller.MainServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
     <servlet-name>mainServlet</servlet-name>
     <url-pattern>/controller</url-pattern>
   </servlet-mapping>
+
+
 </web-app>

@@ -1,31 +1,27 @@
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import dao.DBConnection;
+
 import java.util.Scanner;
 
 public class Main {
-    public static DBConnection dbConnection = null;
 
     public static void main(String[] args) {
 
-        dbConnection = new DBConnection();
-/*Создание БД*/
-        dbConnection.createTable();
+        DBConnection db = new DBConnection();
 
-//        dbConnection.insertIntoTable("1+2", 3);
+/*Создание БД*/
+        db.createTable();
 
 /*Ввод с клавиатуры*/
-        Calculator calc = new Calculator();
+        model.Calculator calc = new model.Calculator();
         Scanner in = new Scanner(System.in);
-        String st = in.nextLine();
-        Integer n = calc.raschet(st);
-        dbConnection.insertIntoTable(st,n);
-
-//        dbConnection.insertIntoTable(in.nextLine(),calc.raschet(st));
+        String vvodnay_stroka = in.nextLine();
+        db.insertIntoTable(vvodnay_stroka, calc.raschet(vvodnay_stroka));
 
 /*Выведение всех*/
-        dbConnection.printAll();
+        db.printAll();
 
+/*Удаление БД из RAM*/
+//        db.dropConnection();
 
     }
 }

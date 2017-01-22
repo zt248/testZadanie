@@ -1,3 +1,8 @@
+package controller;
+
+import dao.DBConnection;
+import model.Calculator;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
@@ -7,7 +12,7 @@ import java.io.IOException;
 
 public class MainServlet extends HttpServlet {
 
-    public static DBConnection dbConnection = null;
+    public DBConnection dbConnection = new DBConnection();
 
     @Override
     public void service(ServletRequest req, ServletResponse resp) throws ServletException, IOException {
@@ -16,8 +21,6 @@ public class MainServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
 
 
-        dbConnection = new DBConnection();
-
 
         String vvodnay_stroka = req.getParameter("vvodnay_stroka");
         Calculator calc = new Calculator();
@@ -25,8 +28,10 @@ public class MainServlet extends HttpServlet {
 
         dbConnection.insertIntoTable(vvodnay_stroka,otvet);
 
+
         System.out.println("Ответ = " + otvet);
         req.getRequestDispatcher("/index.jsp").forward(req, resp);
+
     }
 }
 

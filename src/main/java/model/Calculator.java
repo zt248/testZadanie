@@ -1,3 +1,4 @@
+package model;
 
 import java.util.LinkedList;
 
@@ -50,7 +51,7 @@ public class Calculator {
     }
 
 
-    int raschet(String s) {
+    public int raschet(String s) {
 
         LinkedList<Integer> someInts = new LinkedList<Integer>();
         LinkedList<Character> someOpers = new LinkedList<Character>();

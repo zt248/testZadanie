@@ -7,7 +7,6 @@ public class DBConnection {
 
     private static final String DRIVER = "org.apache.derby.jdbc.EmbeddedDriver";
     private static final String JDBC_URL = "jdbc:derby:memory:testDB;create=true";
-    //    private static final String JDBC_URL = "jdbc:derby:testDB;create=true";
     private static final String JDBC_URL_DROP = "jdbc:derby:memory:testDB;drop=true";
 
     Connection conn;
@@ -17,7 +16,6 @@ public class DBConnection {
             Class.forName(DRIVER);
             this.conn = DriverManager.getConnection(JDBC_URL);
             if (this.conn != null) {
-                System.out.println("Connect to Databace");
             }
         } catch (SQLException e) {
             e.printStackTrace();
@@ -38,7 +36,6 @@ public class DBConnection {
     public void createTable() {
         try {
             conn.createStatement().execute("CREATE TABLE MYTABLE (Vvodnay_stroka VARCHAR (50),otvet INT )");
-            System.out.println("База создана");
         } catch (SQLException e) {
             e.printStackTrace();
         }

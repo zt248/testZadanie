@@ -51,7 +51,7 @@ public class Calculator {
     }
 
 
-    public int raschet(String s) {
+    public int raschet(String s, int radix) {
 
         LinkedList<Integer> someInts = new LinkedList<Integer>();
         LinkedList<Character> someOpers = new LinkedList<Character>();
@@ -83,14 +83,14 @@ public class Calculator {
             } else {
 
                 String operand = "";
-                while (i < s.length() &&
-                        Character.isDigit(s.charAt(i))) {
+                while (i < s.length() && !isOperator(s.charAt(i)) && '(' != s.charAt(i) && ')' != s.charAt(i)) {
 
                     operand += s.charAt(i++);
 
                 }
                 --i;
-                someInts.add(Integer.parseInt(operand));
+
+                someInts.add(Integer.parseInt(operand, radix));
 
             }
         }

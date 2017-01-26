@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="ui/button.css"/>
     <link rel="stylesheet" href="ui/background.css"/>
     <title> Calculator </title>
+
 </head>
 <body>
 <center><h1 > Калькулятор </h1></center>
@@ -14,12 +15,11 @@
 <fieldset style="width:320px">
     <legend style="font-weight: bold">Выберите систему счисления для расчета выражения:</legend>
     <ul class="test">
-
     <input  type="radio" name="radix" value="2" required>
     Двоичная<br>
-    <input type="radio" name="radix" value="10" >
+    <input type="radio" name="radix" value="10" required>
     Десятичная <br>
-    <input type="radio" name="radix" value="16" >
+    <input type="radio" name="radix" value="16" required>
     Шестнадцатиричная<br>
     </ul>
 
@@ -30,7 +30,7 @@
 <table>
     <tr>
         Введите формулу: <br>
-        <input type=text name="lineInFormula"/>
+        <input type=text name="lineInFormula" placeholder="Поле для заполнения" required />
     </tr>
     <tr>
         <td>
@@ -50,3 +50,5 @@
 
 </body>
 </html>
+
+

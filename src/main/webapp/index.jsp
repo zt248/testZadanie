@@ -2,24 +2,35 @@
 <html>
 <head>
     <link rel="stylesheet" href="ui/button.css"/>
+    <link rel="stylesheet" href="ui/background.css"/>
+    <title> Calculator </title>
 </head>
 <body>
+<center><h1 > Калькулятор </h1></center>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 
-<form method=POST action=/controller id="form1"/>
-<fieldset style="width:270px">
-    <legend style="font-weight: bold">Выберите систему счисления для расчета выражения</legend>
-    <input type="radio" name="radix" value="2">
+<form name="form1" method=POST action=/controller id="form1"/>
+<fieldset style="width:320px">
+    <legend style="font-weight: bold">Выберите систему счисления для расчета выражения:</legend>
+    <ul class="test">
+
+    <input  type="radio" name="radix" value="2" required>
     Двоичная<br>
-    <input type="radio" name="radix" value="10">
-    Десятичная<br>
-    <input type="radio" name="radix" value="16">
+    <input type="radio" name="radix" value="10" >
+    Десятичная <br>
+    <input type="radio" name="radix" value="16" >
     Шестнадцатиричная<br>
+    </ul>
+
 </fieldset>
+
+<br>
+
 <table>
     <tr>
-        <input type=text name="vvodnay_stroka"/>
+        Введите формулу: <br>
+        <input type=text name="lineInFormula"/>
     </tr>
     <tr>
         <td>
@@ -29,29 +40,12 @@
         </td>
     </tr>
     <tr>
-        <button class="button" type="submit"> Рассчитать</button>
+        <button id="button" class="button" type="submit"> Рассчитать</button>
     </tr>
 </table>
 </form>
 
-
-<script type="text/javascript">
-    var form = $('form');
-    form.submit(function () {
-        var formID = $(this).attr('id'); // Получение ID формы
-        var formNm = $('#' + formID);
-        $.ajax({
-            type: form.attr('method'),
-            url: form.attr('action'),
-            data: formNm.serialize(),
-            success: function (data) {
-                var result = data;
-                $('#result').attr("value", result);
-            }
-        });
-        return false;
-    });
-</script>
+<script type="text/javascript" src="/ui/script.js"></script>
 
 
 </body>

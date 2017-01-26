@@ -1,0 +1,5 @@
+body {
+    background: url("/ui/calc.jpg");
+    background-size: cover;
+    color: #fff; /* Цвет текста */
+}

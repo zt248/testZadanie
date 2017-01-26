@@ -6,8 +6,10 @@ public class Main {
 
     public static void main(String[] args) {
 
-        String vvodnay_stroka = null;
+        String lineInFormula = null;
 
+
+        
         DBConnection db = new DBConnection();
 
 /*Создание БД*/
@@ -21,21 +23,21 @@ public class Main {
 
 //        System.out.println("Введите уравнение в десятичной системе счисления:");
 //        Scanner in10 = new Scanner(System.in);
-//        vvodnay_stroka = in10.nextLine();
-//        db.insertIntoTable(vvodnay_stroka, calc.raschet(vvodnay_stroka));
-//        System.out.println("Ответ в десятичной системе счисления = " + calc.raschet(vvodnay_stroka));
+//        lineInFormula = in10.nextLine();
+//        db.insertIntoTable(lineInFormula, calc.raschet(lineInFormula));
+//        System.out.println("Ответ в десятичной системе счисления = " + calc.raschet(lineInFormula));
 
 
 //        System.out.println("Введите уравнение в двоичной системе счисления:");
 //        Scanner in2 = new Scanner(System.in);
-//        vvodnay_stroka = in2.nextLine();
-//        int otvet = calc.raschet(vvodnay_stroka, 2);
+//        lineInFormula = in2.nextLine();
+//        int otvet = calc.raschet(lineInFormula, 2);
 //        System.out.println("Ответ в двоичной системе счисления = " + Integer.toBinaryString(otvet));
 
 //        System.out.println("Введите уравнение в двоичной системе счисления:");
 //        Scanner in16 = new Scanner(System.in);
-//        vvodnay_stroka = in16.nextLine();
-//        int otvet = calc.raschet(vvodnay_stroka, 16);
+//        lineInFormula = in16.nextLine();
+//        int otvet = calc.raschet(lineInFormula, 16);
 //        System.out.println("Ответ в шестнадцатиричной системе счисления = " + Integer.toHexString(otvet));
 
 

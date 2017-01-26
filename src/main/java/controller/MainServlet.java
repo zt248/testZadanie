@@ -21,12 +21,12 @@ public class MainServlet extends HttpServlet {
         resp.setCharacterEncoding("UTF-8");
         PrintWriter out = resp.getWriter();
 
-        String vvodnay_stroka = req.getParameter("vvodnay_stroka");
+        String lineInFormula = req.getParameter("lineInFormula");
         String radix = req.getParameter("radix");
         Calculator calc = new Calculator();
-        int raschet = calc.raschet(vvodnay_stroka, Integer.parseInt(radix));
+        int raschet = calc.raschet(lineInFormula, Integer.parseInt(radix));
 
-        dbConnection.insertIntoTable(vvodnay_stroka,raschet);
+        dbConnection.insertIntoTable(lineInFormula,raschet);
 
 //        System.out.println("Десятичный Ответ = " + raschet);
 //        System.out.println("Двоичный Ответ = " + Integer.toBinaryString(raschet));

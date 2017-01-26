@@ -1,3 +1,16 @@
+    $( function() {
+    $( "#dialog" ).dialog({
+        modal: true,
+        autoOpen:false,
+        buttons: {
+            Ok: function() {
+                $( this ).dialog( "close" );
+            }
+        }
+    });
+} );
+
+
 var form = $('form');
 form.submit(function () {
     var formID = $(this).attr('id'); // Получение ID формы
@@ -9,6 +22,9 @@ form.submit(function () {
         success: function (data) {
             var result = data;
             $('#result').attr("value", result);
+        },
+        error: function (data) {
+            $( "#dialog" ).dialog( "open" );
         }
     });
     return false;
